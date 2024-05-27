@@ -1,8 +1,11 @@
 From llama2
 PARAMETER temperature 2
 
-TEMPLATE """
-Traducción a Hyliano: {{ .Prompt }}
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
 """
 
 SYSTEM """

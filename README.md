@@ -21,7 +21,7 @@ ollama pull [model_name]
 ollama run [model_name] [data_string]
 ```
 
-# 5. Try API requests to the server
+## 5. Try API requests to the server
 format: the format to return a response in. Currently the only accepted value is json
 options: additional model parameters listed in the documentation for the Modelfile such as temperature
 system: system message to (overrides what is defined in the Modelfile)
@@ -37,4 +37,10 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "system": "Responde como si fueras Satoru Gojo y en español",
   "stream": false
 }'
+```
+
+## 6. Creating custom models
+You need to train
+```SHELL
+ollama create [cmodel_name] -f Modelfile
 ```
